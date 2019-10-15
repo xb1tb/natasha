@@ -56,7 +56,7 @@ gnc = gnc_relation()
 TITLE = is_capitalized()
 
 NOUN = gram('NOUN')
-NAME_CRF = tag('I')
+#NAME_CRF = tag('I')
 
 ABBR = gram('Abbr')
 SURN = gram('Surn')
