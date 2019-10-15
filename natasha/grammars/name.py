@@ -56,7 +56,7 @@ gnc = gnc_relation()
 TITLE = is_capitalized()
 
 NOUN = gram('NOUN')
-#NAME_CRF = tag('I')
+NAME_CRF = tag('I')
 
 ABBR = gram('Abbr')
 SURN = gram('Surn')
@@ -245,9 +245,9 @@ class StripCrfTransformator(RuleTransformator):
     def visit_term(self, item):
         if isinstance(item, Rule):
             return self.visit(item)
-      #  elif isinstance(item, AndPredicate):
-           # predicates = [_ for _ in item.predicates if _ != NAME_CRF]
-           # return AndPredicate(predicates)
+        elif isinstance(item, AndPredicate):
+            predicates = [_ for _ in item.predicates if _ != NAME_CRF]
+            return AndPredicate(predicates)
         else:
             return item
 
