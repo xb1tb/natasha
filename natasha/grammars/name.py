@@ -70,6 +70,7 @@ PATR = and_(
 )
 
 FIRST = and_(
+    NAME_CRF,
     or_(
         NAME,
         IN_MAYBE_FIRST,
@@ -95,6 +96,7 @@ FIRST_ABBR = and_(
 
 
 LAST = and_(
+   # NAME_CRF,
     or_(
         SURN,
         IN_LAST
